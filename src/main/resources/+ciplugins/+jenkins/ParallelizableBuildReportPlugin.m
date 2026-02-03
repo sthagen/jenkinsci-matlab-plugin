@@ -46,7 +46,7 @@ classdef ParallelizableBuildReportPlugin < matlab.buildtool.plugins.BuildRunnerP
         function runTask(plugin, pluginData)
             runTask@matlab.buildtool.plugins.BuildRunnerPlugin(plugin, pluginData);
 
-            name = fullfile(plugin.TempFolder, matlab.lang.internal.uuid() + ".mat");
+            name = fullfile(plugin.TempFolder, matlab.lang.makeValidName(pluginData.Name) + ".mat");
             taskDetail = getCommonTaskDetail(pluginData);
 
             try
@@ -59,7 +59,7 @@ classdef ParallelizableBuildReportPlugin < matlab.buildtool.plugins.BuildRunnerP
         function skipTask(plugin, pluginData)
             skipTask@matlab.buildtool.plugins.BuildRunnerPlugin(plugin, pluginData);
 
-            name = fullfile(plugin.TempFolder, matlab.lang.internal.uuid() + ".mat");
+            name = fullfile(plugin.TempFolder, matlab.lang.makeValidName(pluginData.Name) + ".mat");
             taskDetail = getCommonTaskDetail(pluginData);
             taskDetail.skipReason = pluginData.SkipReason;
 
