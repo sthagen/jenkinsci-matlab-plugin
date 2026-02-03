@@ -52,7 +52,7 @@ classdef ParallelizableBuildReportPlugin < matlab.buildtool.plugins.BuildRunnerP
             try
                 save(name, "taskDetail");
             catch e
-                warning("ciplugins:jenkins:BuildReportPlugin:UnableToSaveTrace", "Unable to save an artifact required to create the MATLAB build summary table");
+                warning("ciplugins:jenkins:BuildReportPlugin:UnableToSaveTrace", "Unable to save an artifact needed for the build summary.");
             end
         end
 
@@ -66,7 +66,7 @@ classdef ParallelizableBuildReportPlugin < matlab.buildtool.plugins.BuildRunnerP
             try
                 save(name, "taskDetail");
             catch e
-                warning("ciplugins:jenkins:BuildReportPlugin:UnableToSaveTrace", "Unable to save an artifact required to create the MATLAB build summary table");
+                warning("ciplugins:jenkins:BuildReportPlugin:UnableToSaveTrace", "Unable to save an artifact needed for the build summary.");
             end
         end
     end
