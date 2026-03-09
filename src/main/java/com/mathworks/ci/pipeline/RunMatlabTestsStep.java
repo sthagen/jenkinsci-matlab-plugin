@@ -29,11 +29,14 @@ public class RunMatlabTestsStep extends Step implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String testResultsPDF;
+    private String testResultsHTML;
     private String testResultsTAP;
     private String testResultsJUnit;
     private String codeCoverageCobertura;
+    private String codeCoverageHTML;
     private String testResultsSimulinkTest;
     private String modelCoverageCobertura;
+    private String modelCoverageHTML;
     private String selectByTag;
     private String loggingLevel;
     private String outputDetail;
@@ -67,6 +70,15 @@ public class RunMatlabTestsStep extends Step implements Serializable {
         this.testResultsPDF = testResultsPDF;
     }
 
+    public String getTestResultsHTML() {
+        return testResultsHTML;
+    }
+
+    @DataBoundSetter
+    public void setTestResultsHTML(String testResultsHTML) {
+        this.testResultsHTML = testResultsHTML;
+    }
+
     public String getTestResultsJUnit() {
         return testResultsJUnit;
     }
@@ -85,6 +97,15 @@ public class RunMatlabTestsStep extends Step implements Serializable {
         this.codeCoverageCobertura = codeCoverageCobertura;
     }
 
+    public String getCodeCoverageHTML() {
+        return codeCoverageHTML;
+    }
+
+    @DataBoundSetter
+    public void setCodeCoverageHTML(String codeCoverageHTML) {
+        this.codeCoverageHTML = codeCoverageHTML;
+    }
+
     public String getTestResultsSimulinkTest() {
         return testResultsSimulinkTest;
     }
@@ -101,6 +122,15 @@ public class RunMatlabTestsStep extends Step implements Serializable {
     @DataBoundSetter
     public void setModelCoverageCobertura(String modelCoverageCobertura) {
         this.modelCoverageCobertura = modelCoverageCobertura;
+    }
+
+    public String getModelCoverageHTML() {
+        return modelCoverageHTML;
+    }
+
+    @DataBoundSetter
+    public void setModelCoverageHTML(String modelCoverageHTML) {
+        this.modelCoverageHTML = modelCoverageHTML;
     }
 
     public List<String> getSourceFolder() {

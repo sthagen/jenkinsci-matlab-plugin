@@ -22,9 +22,12 @@ import com.mathworks.ci.freestyle.options.*;
 public class RunMatlabTestBuilderPersistenceTest {
     private final String tapFilePath = "mytap/report.tap";
     private final String pdfFilePath = "mypdf/report.pdf";
+    private final String htmlTestReportFolderPath = "myreporthtml/reportHTML";
     private final String jUnitFilePath = "myjunit/report.xml";
     private final String coberturaFilePath = "mycobertura/report.xml";
+    private final String htmlCodeCoverageFolderPath = "myhtml/reportHTML";
     private final String modelCovFilePath = "mymodel/report.xml";
+    private final String htmlModelCoverageFolderPath = "mymodel/reportHTML";
     private final String stmFilePath = "mystm/results.mldatx";
     private final List<SourceFolderPaths> paths = new ArrayList<>();
 
@@ -52,19 +55,27 @@ public class RunMatlabTestBuilderPersistenceTest {
 
             RunMatlabTestsBuilder.TapArtifact tap = new RunMatlabTestsBuilder.TapArtifact(tapFilePath);
             RunMatlabTestsBuilder.PdfArtifact pdf = new RunMatlabTestsBuilder.PdfArtifact(pdfFilePath);
+            RunMatlabTestsBuilder.HtmlReportArtifact htmlTestReport = new RunMatlabTestsBuilder.HtmlReportArtifact(htmlTestReportFolderPath);
             RunMatlabTestsBuilder.JunitArtifact junit = new RunMatlabTestsBuilder.JunitArtifact(jUnitFilePath);
             RunMatlabTestsBuilder.CoberturaArtifact cobertura = new RunMatlabTestsBuilder.CoberturaArtifact(
                     coberturaFilePath);
+            RunMatlabTestsBuilder.HtmlCodeCoverageArtifact htmlCodeCoverage = new RunMatlabTestsBuilder.HtmlCodeCoverageArtifact(
+                    htmlCodeCoverageFolderPath);
             RunMatlabTestsBuilder.ModelCovArtifact modelCov = new RunMatlabTestsBuilder.ModelCovArtifact(
                     modelCovFilePath);
+            RunMatlabTestsBuilder.HtmlModelCoverageArtifact modelCovHTML = new RunMatlabTestsBuilder.HtmlModelCoverageArtifact(
+                    htmlModelCoverageFolderPath);
             RunMatlabTestsBuilder.StmResultsArtifact stmResults = new RunMatlabTestsBuilder.StmResultsArtifact(
                     stmFilePath);
 
             testBuilder.setTapArtifact(tap);
             testBuilder.setPdfReportArtifact(pdf);
+            testBuilder.setHtmlReportArtifact(htmlTestReport);
             testBuilder.setJunitArtifact(junit);
             testBuilder.setCoberturaArtifact(cobertura);
+            testBuilder.setHtmlCodeCoverageArtifact(htmlCodeCoverage);
             testBuilder.setModelCoverageArtifact(modelCov);
+            testBuilder.setHtmlModelCoverageArtifact(modelCovHTML);
             testBuilder.setStmResultsArtifact(stmResults);
 
             project.getBuildersList().add(testBuilder);
@@ -82,16 +93,22 @@ public class RunMatlabTestBuilderPersistenceTest {
             // Verify artifacts are not NullArtifact instances and verify saved path values
             assertTrue(savedInstance.getTapArtifact() instanceof RunMatlabTestsBuilder.TapArtifact);
             assertTrue(savedInstance.getPdfReportArtifact() instanceof RunMatlabTestsBuilder.PdfArtifact);
+            assertTrue(savedInstance.getHtmlReportArtifact() instanceof RunMatlabTestsBuilder.HtmlReportArtifact);
             assertTrue(savedInstance.getJunitArtifact() instanceof RunMatlabTestsBuilder.JunitArtifact);
             assertTrue(savedInstance.getCoberturaArtifact() instanceof RunMatlabTestsBuilder.CoberturaArtifact);
+            assertTrue(savedInstance.getHtmlCodeCoverageArtifact() instanceof RunMatlabTestsBuilder.HtmlCodeCoverageArtifact);
             assertTrue(savedInstance.getModelCoverageArtifact() instanceof RunMatlabTestsBuilder.ModelCovArtifact);
+            assertTrue(savedInstance.getHtmlModelCoverageArtifact() instanceof RunMatlabTestsBuilder.HtmlModelCoverageArtifact);
             assertTrue(savedInstance.getStmResultsArtifact() instanceof RunMatlabTestsBuilder.StmResultsArtifact);
 
             assertEquals(savedInstance.getTapReportFilePath(), tapFilePath);
             assertEquals(savedInstance.getPdfReportFilePath(), pdfFilePath);
+            assertEquals(savedInstance.getHtmlTestReportFolderPath(), htmlTestReportFolderPath);
             assertEquals(savedInstance.getJunitReportFilePath(), jUnitFilePath);
             assertEquals(savedInstance.getCoberturaReportFilePath(), coberturaFilePath);
+            assertEquals(savedInstance.getHtmlCodeCoverageFolderPath(), htmlCodeCoverageFolderPath);
             assertEquals(savedInstance.getModelCoverageFilePath(), modelCovFilePath);
+            assertEquals(savedInstance.getHtmlModelCoverageFolderPath(), htmlModelCoverageFolderPath);
             assertEquals(savedInstance.getStmResultsFilePath(), stmFilePath);
         });
     }

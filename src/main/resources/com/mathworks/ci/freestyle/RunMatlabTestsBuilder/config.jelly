@@ -39,6 +39,8 @@
         </f:block>
     </f:section>
 
+    <br></br>
+
     <f:section title="Generate Test Artifacts">
         <f:block>
             <f:optionalBlock name="pdfReportArtifact" field="pdfReportArtifact" title="PDF test report" checked="${instance.pdfReportArtifact.selected}">
@@ -46,19 +48,25 @@
                     <f:textbox default="matlabTestArtifacts/testreport.pdf"/>
                 </f:entry>
             </f:optionalBlock>
-            
+        
+            <f:optionalBlock name="htmlReportArtifact" field="htmlReportArtifact" title="HTML test report" checked="${instance.htmlReportArtifact.selected}">
+                <f:entry field="htmlTestReportFolderPath" title="Folder path: ">	
+                    <f:textbox default="matlabTestArtifacts/htmltestreport"/>
+                </f:entry>
+            </f:optionalBlock>
+        
             <f:optionalBlock name="tapArtifact" field="tapArtifact" title="TAP test results" checked="${instance.tapArtifact.selected}">   	
                 <f:entry field="tapReportFilePath" title="File path: ">	
                     <f:textbox default="matlabTestArtifacts/taptestresults.tap"/>
                 </f:entry>
             </f:optionalBlock>
-            
+        
             <f:optionalBlock name="junitArtifact" field="junitArtifact" title="JUnit-style test results" checked="${instance.junitArtifact.selected}"> 	
                 <f:entry field="junitReportFilePath" title="File path: ">
                     <f:textbox default="matlabTestArtifacts/junittestresults.xml"/>
                 </f:entry>      
             </f:optionalBlock>
-            
+        
             <f:optionalBlock name="stmResultsArtifact" field="stmResultsArtifact" title="Simulink Test Manager results" checked="${instance.stmResultsArtifact.selected}">  
                 <f:entry field="stmResultsFilePath" title="File path: ">
                     <f:textbox default="matlabTestArtifacts/simulinktestresults.mldatx"/>
@@ -66,6 +74,7 @@
             </f:optionalBlock>
         </f:block>
     </f:section>
+    
     <br></br>
 
     <f:section title="Generate Coverage Artifacts">
@@ -75,10 +84,22 @@
                     <f:textbox default="matlabTestArtifacts/cobertura.xml"/>
                 </f:entry>
             </f:optionalBlock>
-            
+
+            <f:optionalBlock name="htmlCodeCoverageArtifact" field="htmlArtifact" title="HTML code coverage" checked="${instance.htmlCodeCoverageArtifact.selected}">
+                <f:entry field="htmlCodeCoverageFolderPath" title="Folder path: ">
+                    <f:textbox default="matlabTestArtifacts/htmlcodecoverage"/>
+                </f:entry>
+            </f:optionalBlock>
+    
             <f:optionalBlock name="modelCoverageArtifact" field="modelCoverageArtifact" title="Cobertura model coverage" checked="${instance.modelCoverageArtifact.selected}">
                 <f:entry field="modelCoverageFilePath" title="File path: ">
                     <f:textbox default="matlabTestArtifacts/coberturamodelcoverage.xml"/>
+                </f:entry>
+            </f:optionalBlock>
+
+            <f:optionalBlock name="htmlModelCoverageArtifact" field="htmlModelCoverageArtifact" title="HTML model coverage" checked="${instance.htmlModelCoverageArtifact.selected}">
+                <f:entry field="htmlModelCoverageFolderPath" title="Folder path: ">
+                    <f:textbox default="matlabTestArtifacts/htmlmodelcoverage"/>
                 </f:entry>
             </f:optionalBlock>
         </f:block>

@@ -67,11 +67,14 @@ public class RunMatlabTestsBuilderUnitTest {
 
                 assertEquals("", actual.getStartupOptions());
                 assertEquals(null, actual.getTestResultsPDF());
+                assertEquals(null, actual.getTestResultsHTML());
                 assertEquals(null, actual.getTestResultsTAP());
                 assertEquals(null, actual.getTestResultsJUnit());
                 assertEquals(null, actual.getCodeCoverageCobertura());
+                assertEquals(null, actual.getCodeCoverageHTML());
                 assertEquals(null, actual.getTestResultsSimulinkTest());
                 assertEquals(null, actual.getModelCoverageCobertura());
+                assertEquals(null, actual.getModelCoverageHTML());
                 assertEquals(null, actual.getSelectByTag());
                 assertEquals(null, actual.getLoggingLevel());
                 assertEquals(null, actual.getOutputDetail());
@@ -97,16 +100,22 @@ public class RunMatlabTestsBuilderUnitTest {
                 builder.setStartupOptions(new StartupOptions("-nojvm -logfile mylog"));
                 builder.setPdfReportArtifact(
                                 new RunMatlabTestsBuilder.PdfArtifact("pdf.pdf"));
+                builder.setHtmlReportArtifact(
+                                new RunMatlabTestsBuilder.HtmlReportArtifact("htmltestreport"));
                 builder.setTapArtifact(
                                 new RunMatlabTestsBuilder.TapArtifact("tap.tap"));
                 builder.setJunitArtifact(
                                 new RunMatlabTestsBuilder.JunitArtifact("results.xml"));
                 builder.setCoberturaArtifact(
                                 new RunMatlabTestsBuilder.CoberturaArtifact("cov.xml"));
+                builder.setHtmlCodeCoverageArtifact(
+                                new RunMatlabTestsBuilder.HtmlCodeCoverageArtifact("covHTML"));
                 builder.setStmResultsArtifact(
                                 new RunMatlabTestsBuilder.StmResultsArtifact("res.sltest"));
                 builder.setModelCoverageArtifact(
                                 new RunMatlabTestsBuilder.ModelCovArtifact("cov.model"));
+                builder.setHtmlModelCoverageArtifact(
+                                new RunMatlabTestsBuilder.HtmlModelCoverageArtifact("covmodelHTML"));
                 builder.setSelectByTag(
                                 new RunMatlabTestsBuilder.SelectByTag("MyTag"));
                 builder.setSourceFolder(
@@ -127,11 +136,14 @@ public class RunMatlabTestsBuilderUnitTest {
 
                 assertEquals("-nojvm -logfile mylog", actual.getStartupOptions());
                 assertEquals("pdf.pdf", actual.getTestResultsPDF());
+                assertEquals("htmltestreport", actual.getTestResultsHTML());
                 assertEquals("tap.tap", actual.getTestResultsTAP());
                 assertEquals("results.xml", actual.getTestResultsJUnit());
                 assertEquals("cov.xml", actual.getCodeCoverageCobertura());
+                assertEquals("covHTML", actual.getCodeCoverageHTML());
                 assertEquals("res.sltest", actual.getTestResultsSimulinkTest());
                 assertEquals("cov.model", actual.getModelCoverageCobertura());
+                assertEquals("covmodelHTML", actual.getModelCoverageHTML());
                 assertEquals("MyTag", actual.getSelectByTag());
                 assertEquals("Concise", actual.getLoggingLevel());
                 assertEquals("Concise", actual.getOutputDetail());

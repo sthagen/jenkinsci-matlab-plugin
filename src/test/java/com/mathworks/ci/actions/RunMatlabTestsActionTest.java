@@ -96,6 +96,7 @@ public class RunMatlabTestsActionTest {
         // Set some params
         doReturn("results.xml").when(params).getTestResultsJUnit();
         doReturn("cov.xml").when(params).getCodeCoverageCobertura();
+        doReturn("covHTML").when(params).getCodeCoverageHTML();
         doReturn("true").when(params).getStrict();
         doReturn("Default").when(params).getLoggingLevel();
         doReturn("Concise").when(params).getOutputDetail();
@@ -112,6 +113,7 @@ public class RunMatlabTestsActionTest {
         assertThat(captor.getValue(), containsString(
                 "genscript('Test','JUnitTestResults','results.xml',"
                         + "'CoberturaCodeCoverage','cov.xml',"
+                        + "'HTMLCodeCoverage','covHTML',"
                         + "'Strict',true,"
                         + "'LoggingLevel','Default',"
                         + "'OutputDetail','Concise',"
@@ -123,11 +125,14 @@ public class RunMatlabTestsActionTest {
             throws IOException, InterruptedException, MatlabExecutionException {
         // Set all params
         doReturn("results.pdf").when(params).getTestResultsPDF();
+        doReturn("resultsHTML").when(params).getTestResultsHTML();
         doReturn("results.tap").when(params).getTestResultsTAP();
         doReturn("results.xml").when(params).getTestResultsJUnit();
         doReturn("cov.xml").when(params).getCodeCoverageCobertura();
+        doReturn("covHTML").when(params).getCodeCoverageHTML();
         doReturn("results.sltest").when(params).getTestResultsSimulinkTest();
         doReturn("cov.model").when(params).getModelCoverageCobertura();
+        doReturn("covmodelHTML").when(params).getModelCoverageHTML();
         doReturn("MyTag").when(params).getSelectByTag();
         doReturn("true").when(params).getUseParallel();
         doReturn("true").when(params).getStrict();
@@ -147,11 +152,14 @@ public class RunMatlabTestsActionTest {
         assertThat(captor.getValue(), containsString(
                 "genscript('Test',"
                         + "'PDFTestReport','results.pdf',"
+                        + "'HTMLTestReport','resultsHTML',"
                         + "'TAPTestResults','results.tap',"
                         + "'JUnitTestResults','results.xml',"
                         + "'CoberturaCodeCoverage','cov.xml',"
+                        + "'HTMLCodeCoverage','covHTML',"
                         + "'SimulinkTestResults','results.sltest',"
                         + "'CoberturaModelCoverage','cov.model',"
+                        + "'HTMLModelCoverage','covmodelHTML',"
                         + "'SelectByTag','MyTag',"
                         + "'UseParallel',true,"
                         + "'Strict',true,"

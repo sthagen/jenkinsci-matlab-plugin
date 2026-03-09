@@ -83,11 +83,14 @@ public class RunMatlabTestsAction extends MatlabAction {
         // All string-based fields
         final String[] names = {
                 "'PDFTestReport'",
+                "'HTMLTestReport'",
                 "'TAPTestResults'",
                 "'JUnitTestResults'",
                 "'CoberturaCodeCoverage'",
+                "'HTMLCodeCoverage'",
                 MatlabBuilderConstants.STM_RESULTS,
                 "'CoberturaModelCoverage'",
+                "'HTMLModelCoverage'",
                 "'SelectByTag'",
                 "'UseParallel'",
                 "'Strict'",
@@ -98,11 +101,14 @@ public class RunMatlabTestsAction extends MatlabAction {
         };
         final String[] values = {
                 this.params.getTestResultsPDF(),
+                this.params.getTestResultsHTML(),
                 this.params.getTestResultsTAP(),
                 this.params.getTestResultsJUnit(),
                 this.params.getCodeCoverageCobertura(),
+                this.params.getCodeCoverageHTML(),
                 this.params.getTestResultsSimulinkTest(),
                 this.params.getModelCoverageCobertura(),
+                this.params.getModelCoverageHTML(),
                 this.params.getSelectByTag(),
                 this.params.getUseParallel(),
                 this.params.getStrict(),

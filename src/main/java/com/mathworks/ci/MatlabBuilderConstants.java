@@ -20,11 +20,14 @@ public class MatlabBuilderConstants {
     // Input parameter names (Passed to runMatlabTests.m as name-value pair
     // arguments)
     public static final String PDF_REPORT = "'PDFReport'";
+    public static final String HTML_REPORT = "'HTMLReport'";
     public static final String TAP_RESULTS = "'TAPResults'";
     public static final String JUNIT_RESULTS = "'JUnitResults'";
     public static final String STM_RESULTS = "'SimulinkTestResults'";
     public static final String COBERTURA_CODE_COVERAGE = "'CoberturaCodeCoverage'";
+    public static final String HTML_CODE_COVERAGE = "'HTMLCodeCoverage'";
     public static final String COBERTURA_MODEL_COVERAGE = "'CoberturaModelCoverage'";
+    public static final String HTML_MODEL_COVERAGE = "'HTMLModelCoverage'";
 
     // Matlab Script generator package
     public static final String MATLAB_SCRIPT_GENERATOR = "matlab-script-generator.zip";

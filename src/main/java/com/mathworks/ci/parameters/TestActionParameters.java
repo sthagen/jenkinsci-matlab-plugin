@@ -16,11 +16,14 @@ import org.jenkinsci.plugins.workflow.steps.StepContext;
 
 public class TestActionParameters extends MatlabActionParameters {
     private String testResultsPDF;
+    private String testResultsHTML;
     private String testResultsTAP;
     private String testResultsJUnit;
     private String codeCoverageCobertura;
+    private String codeCoverageHTML;
     private String testResultsSimulinkTest;
     private String modelCoverageCobertura;
+    private String modelCoverageHTML;
     private String selectByTag;
     private String loggingLevel;
     private String outputDetail;
@@ -30,19 +33,22 @@ public class TestActionParameters extends MatlabActionParameters {
     private List<String> selectByFolder = new ArrayList<>();
 
     public TestActionParameters(StepContext context, String startupOpts,
-            String testResultsPDF, String testResultsTAP, String testResultsJUnit,
-            String codeCoverageCobertura, String testResultsSimulinkTest, String modelCoverageCobertura,
+            String testResultsPDF, String testResultsHTML, String testResultsTAP, String testResultsJUnit,
+            String codeCoverageCobertura, String codeCoverageHTML, String testResultsSimulinkTest, String modelCoverageCobertura, String modelCoverageHTML,
             String selectByTag, String loggingLevel, String outputDetail,
             boolean useParallel, boolean strict, List<String> sourceFolder,
             List<String> selectByFolder)
             throws IOException, InterruptedException {
         super(context, startupOpts);
         this.testResultsPDF = testResultsPDF;
+        this.testResultsHTML = testResultsHTML;
         this.testResultsTAP = testResultsTAP;
         this.testResultsJUnit = testResultsJUnit;
         this.codeCoverageCobertura = codeCoverageCobertura;
+        this.codeCoverageHTML = codeCoverageHTML;
         this.testResultsSimulinkTest = testResultsSimulinkTest;
         this.modelCoverageCobertura = modelCoverageCobertura;
+        this.modelCoverageHTML = modelCoverageHTML;
         this.selectByTag = selectByTag;
         this.loggingLevel = loggingLevel;
         this.outputDetail = outputDetail;
@@ -54,18 +60,21 @@ public class TestActionParameters extends MatlabActionParameters {
 
     public TestActionParameters(Run<?, ?> build, FilePath workspace, EnvVars env, Launcher launcher,
             TaskListener listener, String startupOpts,
-            String testResultsPDF, String testResultsTAP, String testResultsJUnit,
-            String codeCoverageCobertura, String testResultsSimulinkTest, String modelCoverageCobertura,
+            String testResultsPDF, String testResultsHTML, String testResultsTAP, String testResultsJUnit,
+            String codeCoverageCobertura, String codeCoverageHTML, String testResultsSimulinkTest, String modelCoverageCobertura, String modelCoverageHTML,
             String selectByTag, String loggingLevel, String outputDetail,
             boolean useParallel, boolean strict, List<String> sourceFolder,
             List<String> selectByFolder) {
         super(build, workspace, env, launcher, listener, startupOpts);
         this.testResultsPDF = testResultsPDF;
+        this.testResultsHTML = testResultsHTML;
         this.testResultsTAP = testResultsTAP;
         this.testResultsJUnit = testResultsJUnit;
         this.codeCoverageCobertura = codeCoverageCobertura;
+        this.codeCoverageHTML = codeCoverageHTML;
         this.testResultsSimulinkTest = testResultsSimulinkTest;
         this.modelCoverageCobertura = modelCoverageCobertura;
+        this.modelCoverageHTML = modelCoverageHTML;
         this.selectByTag = selectByTag;
         this.loggingLevel = loggingLevel;
         this.outputDetail = outputDetail;
@@ -77,6 +86,10 @@ public class TestActionParameters extends MatlabActionParameters {
 
     public String getTestResultsPDF() {
         return testResultsPDF;
+    }
+
+    public String getTestResultsHTML() {
+        return testResultsHTML;
     }
 
     public String getTestResultsTAP() {
@@ -91,12 +104,20 @@ public class TestActionParameters extends MatlabActionParameters {
         return codeCoverageCobertura;
     }
 
+    public String getCodeCoverageHTML() {
+        return codeCoverageHTML;
+    }
+
     public String getTestResultsSimulinkTest() {
         return testResultsSimulinkTest;
     }
 
     public String getModelCoverageCobertura() {
         return modelCoverageCobertura;
+    }
+
+    public String getModelCoverageHTML() {
+        return modelCoverageHTML;
     }
 
     public String getSelectByTag() {
