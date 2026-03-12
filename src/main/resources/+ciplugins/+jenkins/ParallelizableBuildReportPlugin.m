@@ -1,6 +1,6 @@
 classdef ParallelizableBuildReportPlugin < matlab.buildtool.plugins.BuildRunnerPlugin
 
-    %   Copyright 2025 The MathWorks, Inc.
+    %   Copyright 2025-2026 The MathWorks, Inc.
 
     properties
         TempFolder
@@ -46,18 +46,28 @@ classdef ParallelizableBuildReportPlugin < matlab.buildtool.plugins.BuildRunnerP
         function runTask(plugin, pluginData)
             runTask@matlab.buildtool.plugins.BuildRunnerPlugin(plugin, pluginData);
 
-            name = fullfile(plugin.TempFolder, pluginData.Name + ".mat");
+            name = fullfile(plugin.TempFolder, matlab.lang.makeValidName(pluginData.Name) + ".mat");
             taskDetail = getCommonTaskDetail(pluginData);
-            save(name, "taskDetail");
+
+            try
+                save(name, "taskDetail");
+            catch e
+                warning("ciplugins:jenkins:BuildReportPlugin:UnableToSaveTrace", "Unable to save an artifact needed for the build summary.");
+            end
         end
 
         function skipTask(plugin, pluginData)
             skipTask@matlab.buildtool.plugins.BuildRunnerPlugin(plugin, pluginData);
 
-            name = fullfile(plugin.TempFolder, pluginData.Name + ".mat");
+            name = fullfile(plugin.TempFolder, matlab.lang.makeValidName(pluginData.Name) + ".mat");
             taskDetail = getCommonTaskDetail(pluginData);
             taskDetail.skipReason = pluginData.SkipReason;
-            save(name, "taskDetail");
+
+            try
+                save(name, "taskDetail");
+            catch e
+                warning("ciplugins:jenkins:BuildReportPlugin:UnableToSaveTrace", "Unable to save an artifact needed for the build summary.");
+            end
         end
     end
 end
