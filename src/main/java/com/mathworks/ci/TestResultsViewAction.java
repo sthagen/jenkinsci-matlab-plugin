@@ -1,7 +1,7 @@
 package com.mathworks.ci;
 
 /**
- * Copyright 2025, The MathWorks Inc.
+ * Copyright 2025-26, The MathWorks Inc.
  *
  */
 
@@ -151,7 +151,8 @@ public class TestResultsViewAction implements RunAction2 {
             matlabTestCase.setStatus(TestStatus.PASSED);
         }
 
-        Object diagnostics = ((JSONObject)matlabTestCaseResult.get("Details")).get("DiagnosticRecord");
+        JSONObject details = (JSONObject) matlabTestCaseResult.get("Details");
+        Object diagnostics = details != null ? details.get("DiagnosticRecord") : null;
         if(diagnostics instanceof JSONObject) {
             MatlabTestDiagnostics matlabTestDiagnostics = new MatlabTestDiagnostics();
             matlabTestDiagnostics.setEvent(((JSONObject)diagnostics).get("Event").toString());
