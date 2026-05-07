@@ -1,0 +1,121 @@
+[
+  {
+    "TestResult": {
+      "Duration": 0.1,
+      "Details": {},
+      "Name": "TestExamples1/testNonLeapYear",
+      "Passed": true,
+      "Failed": false,
+      "Incomplete": false
+    },
+    "BaseFolder": "/Users/username/workspace/visualization/tests"
+  },
+  {
+    "TestResult": {
+      "Duration": 0.11,
+      "Details": {},
+      "Name": "TestExamples1/testNonLeapYear2",
+      "Passed": true,
+      "Failed": false,
+      "Incomplete": false
+    },
+    "BaseFolder": "/Users/username/workspace/visualization/tests"
+  },
+  {
+    "TestResult": {
+      "Duration": 0.111,
+      "Details": {},
+      "Name": "TestExamples1/testNonLeapYear3",
+      "Passed": true,
+      "Failed": false,
+      "Incomplete": false
+    },
+    "BaseFolder": "/Users/username/workspace/visualization/tests"
+  },
+  {
+    "TestResult": {
+      "Duration": 0.1111,
+      "Details": {},
+      "Name": "TestExamples1/testNonLeapYear4",
+      "Passed": true,
+      "Failed": false,
+      "Incomplete": false
+    },
+    "BaseFolder": "/Users/username/workspace/visualization/tests"
+  },
+  {
+    "TestResult": {
+      "Duration": 0.4,
+      "Details": {
+        "DiagnosticRecord": {
+          "Event": "SampleDiagnosticsEvent1",
+          "Report": "SampleDiagnosticsReport1"
+        }
+      },
+      "Name": "TestExamples1/testLeapYear",
+      "Passed": false,
+      "Failed": true,
+      "Incomplete": true
+    },
+    "BaseFolder": "/Users/username/workspace/visualization/tests"
+  },
+  {
+    "TestResult": {
+      "Duration": 0.4,
+      "Details": {
+        "DiagnosticRecord": {
+          "Event": "SampleDiagnosticsEvent1",
+          "Report": "SampleDiagnosticsReport1"
+        }
+      },
+      "Name": "TestExamples1/testLeapYear2",
+      "Passed": false,
+      "Failed": true,
+      "Incomplete": true
+    },
+    "BaseFolder": "/Users/username/workspace/visualization/tests"
+  },
+  {
+    "TestResult": {
+      "Duration": 0.4,
+      "Details": {
+        "DiagnosticRecord": {
+          "Event": "SampleDiagnosticsEvent1",
+          "Report": "SampleDiagnosticsReport1"
+        }
+      },
+      "Name": "TestExamples1/testLeapYear3",
+      "Passed": false,
+      "Failed": true,
+      "Incomplete": true
+    },
+    "BaseFolder": "/Users/username/workspace/visualization/tests"
+  },
+  {
+    "TestResult": {
+      "Duration": 0.1,
+      "Details": {
+        "DiagnosticRecord": {
+          "Event": "SampleDiagnosticsEvent2",
+          "Report": "SampleDiagnosticsReport2"
+        }
+      },
+      "Name": "TestExamples1/testValidDateFormat",
+      "Passed": false,
+      "Failed": false,
+      "Incomplete": true
+    },
+    "BaseFolder": "/Users/username/workspace/visualization/tests"
+  },
+  {
+    "TestResult": {
+      "Duration": 0,
+      "Details": {},
+      "Name": "TestExamples1/testInvalidDateFormat",
+      "Passed": false,
+      "Failed": false,
+      "Incomplete": false
+    },
+    "BaseFolder": "/Users/username/workspace/visualization/tests"
+  }
+]

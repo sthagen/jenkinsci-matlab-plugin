@@ -36,7 +36,13 @@
                 </br><br />Not Run</p>
             </button>
 
+            <j:set var="sessionIndex" value="${0}"/>
             <j:forEach var="testSession" items="${it.testResults}" varStatus="status">
+              <j:if test="${!testSession.isEmpty()}">
+                <j:set var="sessionIndex" value="${sessionIndex + 1}"/>
+                <j:if test="${it.testResults.size() > 1}">
+                  <h3>Test Session ${sessionIndex}</h3>
+                </j:if>
                 <table class="jenkins-table sortable" id="testResultsTable">
                     <thead>
                         <tr>
@@ -143,6 +149,7 @@
                         </j:forEach>
                     </tbody>
                 </table>
+              </j:if>
             </j:forEach>
         </l:main-panel>
     </l:layout>
